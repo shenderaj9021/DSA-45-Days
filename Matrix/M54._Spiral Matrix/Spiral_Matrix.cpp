@@ -1,0 +1,44 @@
+/* 54. Spiral Matrix
+https://leetcode.com/problems/spiral-matrix/
+
+*/
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int top =0;
+        int bottom =matrix.size()-1;
+        int left = 0;
+        int right =matrix[0].size()-1;
+        vector<int> ans;
+        int cx = 0;
+        int cy = 0;
+
+        while(top<=bottom && left<=right){
+            cout<<"top- "<<top<<"bottom- "<<bottom<<"left- "<<left<<"right- "<<right<<endl;
+            for(int i=left;i<=right;i++){
+                ans.push_back(matrix[top][i]);
+            }
+            top++;
+            cout<<"1done"<<endl;
+            for(int i=top;i<=bottom;i++){
+                ans.push_back(matrix[i][right]);
+            }
+            right--;
+            if(top<=bottom){
+                for(int i=right;i>=left;i--){
+                    ans.push_back(matrix[bottom][i]);
+                }
+                bottom--;
+            }
+            if(left<=right){
+                for(int i=bottom;i>=top;i--){
+                    ans.push_back(matrix[i][left]);
+                }
+                left++;
+             }
+         
+           
+        } 
+         return ans;
+    }
+};
