@@ -1,12 +1,9 @@
 #include<bits//stdc++.h>
 using namespace std;
 int main(){
-    int t;
-    cin>> t;
-    while(t>0){
         int n;
-        int num;
-        cin>>n>>num;
+        int m;
+        cin>>n>>m;
         int arr[n];
         map<int,pair<int,int>>mp;
         for(int i=0;i<n;i++){
@@ -17,16 +14,12 @@ int main(){
                 mp[arr[i]].second = i;
             }
         }
-        while(num>0){
-            num--;
+        while(m>0){
+            m--;
             int curr_pos ;
             int visit_branch;
             cin>> curr_pos>>visit_branch;
-            if(arr[curr_pos-1]==visit_branch){
-                cout<<0<<endl;
-                continue;
-            }
-            if(mp.find(visit_branch)==mp.end()){
+            if(arr[curr_pos-1]==visit_branch || mp.find(visit_branch)==mp.end()){
                 cout<<"-1"<<endl;
                 continue;
             }
@@ -38,6 +31,6 @@ int main(){
                 cout<<"Right"<<endl;
             }
         }
-        t--;
-    }
+     
+    
 }

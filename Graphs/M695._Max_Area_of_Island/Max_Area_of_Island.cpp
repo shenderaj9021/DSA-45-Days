@@ -8,7 +8,7 @@ public:
             return ;
         }
         if(grid[i][j]==1){
-            area++;
+            area++; 
             grid[i][j] =0;
         }else{
             return;
