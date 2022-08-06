@@ -17,4 +17,4 @@ int main(){
     cin>> n>>m;
     cout<<"Gcd of "<<n<<" & "<<m<<"  is "<<gcd(n,m);
     cout<<"lcm of "<<n<<" & "<<m<<"  is "<<lcm(n,m);
-}
+}()
